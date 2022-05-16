@@ -31,7 +31,7 @@ class Plugin(mkdocs.plugins.BasePlugin):
                 continue
             repl_tag = self.create_repl_tag(src)
             esc_tag = re.sub(r'\/', "\\\\/", tag)
-            html = re.sub(esc_tag, repl_tag, html)
+            html = html.replace(tag, repl_tag)
 
         return html
 
