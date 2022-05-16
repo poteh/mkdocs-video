@@ -30,7 +30,6 @@ class Plugin(mkdocs.plugins.BasePlugin):
             if src is None:
                 continue
             repl_tag = self.create_repl_tag(src)
-            esc_tag = re.sub(r'\/', "\\\\/", tag)
             html = html.replace(tag, repl_tag)
 
         return html
