@@ -43,7 +43,7 @@ class Plugin(mkdocs.plugins.BasePlugin):
         '''
 
         result = re.search(
-            r'src=\"[^\s]*\"',
+            r'src=\".*\"',
             tag
         )
 
@@ -92,6 +92,6 @@ class Plugin(mkdocs.plugins.BasePlugin):
         mark = self.config["mark"]
 
         return re.findall(
-            r'<img alt="' + mark + '" src="[^\s]*"\s*\/>',
+            r'<img alt="' + mark + '" src=".*"\s*\/>',
             content
         )
